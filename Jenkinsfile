@@ -9,6 +9,7 @@ pipeline{
         stage("Test"){
             steps{
                 chmod +x ./gradlew
+                ./gradlew check
             }
             
         }
