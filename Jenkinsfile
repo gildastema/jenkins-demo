@@ -1,11 +1,16 @@
 pipeline{
-    agent any
+    agent {
+        docker{
+            image 'openjdk:17-alpine'
+        }
+    }
 
     stages {
         stage("Test"){
             steps{
-                echo "Testing"
+                chmod +x ./gradlew
             }
+            
         }
         stage("Build"){
             steps{
